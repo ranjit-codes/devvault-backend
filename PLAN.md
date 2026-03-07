@@ -4,15 +4,15 @@
 
 Goal: Production-ready NestJS application structure.
 
-- [ ] Install NestJS CLI
-- [ ] Create project `devvault-backend`
-- [ ] Setup TypeScript strict configuration
-- [ ] Configure environment management with `@nestjs/config`
-- [ ] Setup structured logging (`nestjs-pino`)
-- [ ] Enable global validation pipe
-- [ ] Create global exception filter
-- [ ] Setup CORS and security headers
-- [ ] Implement `/health` endpoint
+- [x] Install NestJS CLI
+- [x] Create project `devvault-backend`
+- [x] Setup TypeScript strict configuration
+- [x] Configure environment management with `@nestjs/config`
+- [x] Setup structured logging (`nestjs-pino`)
+- [x] Enable global validation pipe
+- [x] Create global exception filter
+- [x] Setup CORS and security headers
+- [x] Implement `/health` endpoint
 
 Deliverable: **Clean NestJS server running locally**
 
@@ -22,15 +22,15 @@ Deliverable: **Clean NestJS server running locally**
 
 Goal: Reliable relational database with type-safe ORM.
 
-- [ ] Setup PostgreSQL locally or via Docker
-- [ ] Install Prisma
-- [ ] Configure Prisma with PostgreSQL
-- [ ] Create initial Prisma schema
-- [ ] Add `User` model
-- [ ] Add `Resource` model
-- [ ] Run Prisma migrations
-- [ ] Generate Prisma client
-- [ ] Create `PrismaService` for NestJS dependency injection
+- [x] Setup PostgreSQL locally or via Docker
+- [x] Install Prisma
+- [x] Configure Prisma with PostgreSQL
+- [x] Create initial Prisma schema
+- [x] Add `User` model
+- [x] Add `Resource` model
+- [x] Run Prisma migrations
+- [x] Generate Prisma client
+- [x] Create `PrismaService` for NestJS dependency injection
 
 Deliverable: **Database fully connected to NestJS**
 
