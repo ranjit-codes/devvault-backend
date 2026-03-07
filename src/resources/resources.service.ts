@@ -1,19 +1,27 @@
-import { Injectable, NotFoundException } from '@nestjs/common';
+import { CACHE_MANAGER } from '@nestjs/cache-manager';
+import { Inject, Injectable, NotFoundException } from '@nestjs/common';
+import type { Cache } from 'cache-manager';
 import { PrismaService } from '../prisma/prisma.service';
 import { CreateResourceDto } from './dto/create-resource.dto';
 import { UpdateResourceDto } from './dto/update-resource.dto';
 
 @Injectable()
 export class ResourcesService {
-  constructor(private readonly prisma: PrismaService) {}
+  constructor(
+    private readonly prisma: PrismaService,
+    @Inject(CACHE_MANAGER) private cacheManager: Cache,
+  ) {}
 
   async create(createResourceDto: CreateResourceDto, authorId: string) {
-    return this.prisma.resource.create({
+    const resource = await this.prisma.resource.create({
       data: {
         ...createResourceDto,
         authorId,
       },
     });
+    // Invalidate resources cache
+    await this.clearResourcesCache();
+    return resource;
   }
 
   async findAll(
@@ -77,10 +85,12 @@ export class ResourcesService {
       );
     }
 
-    return this.prisma.resource.update({
+    const updated = await this.prisma.resource.update({
       where: { id },
       data: updateResourceDto,
     });
+    await this.clearResourcesCache();
+    return updated;
   }
 
   async remove(id: string, authorId: string) {
@@ -91,8 +101,18 @@ export class ResourcesService {
       );
     }
 
-    return this.prisma.resource.delete({
+    const deleted = await this.prisma.resource.delete({
       where: { id },
     });
+    await this.clearResourcesCache();
+    return deleted;
+  }
+
+  // Helper method to clear list caches. A simpler approach is to wipe everything starting with '/resources'
+  private async clearResourcesCache() {
+    // Note: cache-manager w/ redis store requires getting all keys to delete wildcards.
+    // However standard cache-manager v5+ `redisStore` allows pattern matching or we can just reset
+    // For simplicity, we can reset everything globally (or keep a list of keys)
+    await this.cacheManager.clear();
   }
 }

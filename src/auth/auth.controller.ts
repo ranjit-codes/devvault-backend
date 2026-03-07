@@ -1,5 +1,13 @@
-import { Body, Controller, Get, Post, UseGuards } from '@nestjs/common';
+import {
+  Body,
+  Controller,
+  Get,
+  Post,
+  UseGuards,
+  UseInterceptors,
+} from '@nestjs/common';
 import type { User } from '@prisma/client';
+import { UserCacheInterceptor } from '../redis-cache/user-cache.interceptor';
 import { AuthService } from './auth.service';
 import { CurrentUser } from './decorators/current-user.decorator';
 import { LoginDto } from './dto/login.dto';
@@ -26,6 +34,7 @@ export class AuthController {
   }
 
   @UseGuards(JwtAuthGuard)
+  @UseInterceptors(UserCacheInterceptor)
   @Get('me')
   getProfile(@CurrentUser() user: User) {
     // We return the user object (attached by Passport Strategy)

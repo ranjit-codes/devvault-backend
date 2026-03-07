@@ -8,6 +8,7 @@ import { PrismaModule } from './prisma/prisma.module';
 import { AuthModule } from './auth/auth.module';
 import { UsersModule } from './users/users.module';
 import { ResourcesModule } from './resources/resources.module';
+import { RedisCacheModule } from './redis-cache/redis-cache.module';
 
 @Module({
   imports: [
@@ -25,6 +26,7 @@ import { ResourcesModule } from './resources/resources.module';
     AuthModule,
     UsersModule,
     ResourcesModule,
+    RedisCacheModule,
   ],
   controllers: [AppController],
   providers: [AppService],

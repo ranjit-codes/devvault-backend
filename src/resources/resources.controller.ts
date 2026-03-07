@@ -1,3 +1,4 @@
+import { CACHE_MANAGER, CacheInterceptor } from '@nestjs/cache-manager';
 import {
   Body,
   Controller,
@@ -8,6 +9,7 @@ import {
   Post,
   Query,
   UseGuards,
+  UseInterceptors,
 } from '@nestjs/common';
 import type { User } from '@prisma/client';
 import { CurrentUser } from '../auth/decorators/current-user.decorator';
@@ -30,6 +32,7 @@ export class ResourcesController {
   }
 
   @Get()
+  @UseInterceptors(CacheInterceptor)
   findAll(
     @Query('page') page?: string,
     @Query('limit') limit?: string,

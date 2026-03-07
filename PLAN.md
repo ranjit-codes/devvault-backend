@@ -76,11 +76,11 @@ Deliverable: **Complete CRUD API**
 
 Goal: Improve API performance.
 
-- [ ] Install Redis
-- [ ] Integrate Redis client in NestJS
-- [ ] Cache resource list endpoint
-- [ ] Cache user profile endpoint
-- [ ] Implement cache invalidation strategy
+- [x] Install Redis
+- [x] Integrate Redis client in NestJS
+- [x] Cache resource list endpoint
+- [x] Cache user profile endpoint
+- [x] Implement cache invalidation strategy
 
 Deliverable: **Low-latency API responses**
 
