@@ -1,7 +1,10 @@
+import { InjectQueue } from '@nestjs/bullmq';
 import { CACHE_MANAGER } from '@nestjs/cache-manager';
 import { Inject, Injectable, NotFoundException } from '@nestjs/common';
+import { Queue } from 'bullmq';
 import type { Cache } from 'cache-manager';
 import { PrismaService } from '../prisma/prisma.service';
+import { NotificationJob } from '../queue/dto/notification-job.dto';
 import { CreateResourceDto } from './dto/create-resource.dto';
 import { UpdateResourceDto } from './dto/update-resource.dto';
 
@@ -10,6 +13,8 @@ export class ResourcesService {
   constructor(
     private readonly prisma: PrismaService,
     @Inject(CACHE_MANAGER) private cacheManager: Cache,
+    @InjectQueue('notifications')
+    private notificationsQueue: Queue<NotificationJob>,
   ) {}
 
   async create(createResourceDto: CreateResourceDto, authorId: string) {
@@ -21,6 +26,22 @@ export class ResourcesService {
     });
     // Invalidate resources cache
     await this.clearResourcesCache();
+
+    // Push background job
+    await this.notificationsQueue.add(
+      'resource-created',
+      {
+        resourceId: resource.id,
+        resourceTitle: resource.title,
+        authorId: resource.authorId,
+      },
+      {
+        attempts: 3,
+        backoff: { type: 'exponential', delay: 1000 },
+        removeOnComplete: true,
+      },
+    );
+
     return resource;
   }
 

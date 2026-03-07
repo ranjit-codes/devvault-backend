@@ -58,15 +58,15 @@ Deliverable: **Secure authentication system**
 
 Goal: Core functionality of DevVault.
 
-- [ ] Create `ResourcesModule`
-- [ ] Implement create resource endpoint
-- [ ] Implement update resource endpoint
-- [ ] Implement delete resource endpoint
-- [ ] Implement get resource by id
-- [ ] Implement list resources endpoint
-- [ ] Add pagination support
-- [ ] Add filtering by tags or type
-- [ ] Add request validation DTOs
+- [x] Create `ResourcesModule`
+- [x] Implement create resource endpoint
+- [x] Implement update resource endpoint
+- [x] Implement delete resource endpoint
+- [x] Implement get resource by id
+- [x] Implement list resources endpoint
+- [x] Add pagination support
+- [x] Add filtering by tags or type
+- [x] Add request validation DTOs
 
 Deliverable: **Complete CRUD API**
 
@@ -90,13 +90,13 @@ Deliverable: **Low-latency API responses**
 
 Goal: Handle async tasks.
 
-- [ ] Install BullMQ
-- [ ] Create `QueueModule`
-- [ ] Setup Redis queue connection
-- [ ] Create worker processor
-- [ ] Implement notification jobs
-- [ ] Implement retry strategy
-- [ ] Handle job failures
+- [x] Install BullMQ
+- [x] Create `QueueModule`
+- [x] Setup Redis queue connection
+- [x] Create worker processor
+- [x] Implement notification jobs
+- [x] Implement retry strategy
+- [x] Handle job failures
 
 Deliverable: **Queue-based async processing**
 

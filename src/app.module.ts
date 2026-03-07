@@ -9,6 +9,7 @@ import { AuthModule } from './auth/auth.module';
 import { UsersModule } from './users/users.module';
 import { ResourcesModule } from './resources/resources.module';
 import { RedisCacheModule } from './redis-cache/redis-cache.module';
+import { QueueModule } from './queue/queue.module';
 
 @Module({
   imports: [
@@ -27,6 +28,7 @@ import { RedisCacheModule } from './redis-cache/redis-cache.module';
     UsersModule,
     ResourcesModule,
     RedisCacheModule,
+    QueueModule,
   ],
   controllers: [AppController],
   providers: [AppService],
