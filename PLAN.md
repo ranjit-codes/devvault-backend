@@ -40,15 +40,15 @@ Deliverable: **Database fully connected to NestJS**
 
 Goal: Production-grade authentication.
 
-- [ ] Create `AuthModule`
-- [ ] Implement `signup` endpoint
-- [ ] Implement `login` endpoint
-- [ ] Hash passwords with bcrypt
-- [ ] Implement JWT authentication
-- [ ] Implement refresh token flow
-- [ ] Add `JwtAuthGuard`
-- [ ] Protect private endpoints
-- [ ] Add `GET /me` endpoint
+- [x] Create `AuthModule`
+- [x] Implement `signup` endpoint
+- [x] Implement `login` endpoint
+- [x] Hash passwords with bcrypt
+- [x] Implement JWT authentication
+- [x] Implement refresh token flow
+- [x] Add `JwtAuthGuard`
+- [x] Protect private endpoints
+- [x] Add `GET /me` endpoint
 
 Deliverable: **Secure authentication system**
 
