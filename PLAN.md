@@ -18,7 +18,7 @@ Deliverable: **Clean NestJS server running locally**
 
 ---
 
-# Phase 2 — Database Layer (PostgreSQL + Prisma)
+## Phase 2 — Database Layer (PostgreSQL + Prisma)
 
 Goal: Reliable relational database with type-safe ORM.
 
@@ -36,7 +36,7 @@ Deliverable: **Database fully connected to NestJS**
 
 ---
 
-# Phase 3 — Authentication System
+## Phase 3 — Authentication System
 
 Goal: Production-grade authentication.
 
@@ -54,7 +54,7 @@ Deliverable: **Secure authentication system**
 
 ---
 
-# Phase 4 — Core Feature: Resource API
+## Phase 4 — Core Feature: Resource API
 
 Goal: Core functionality of DevVault.
 
@@ -72,7 +72,7 @@ Deliverable: **Complete CRUD API**
 
 ---
 
-# Phase 5 — Redis Caching Layer
+## Phase 5 — Redis Caching Layer
 
 Goal: Improve API performance.
 
@@ -86,7 +86,7 @@ Deliverable: **Low-latency API responses**
 
 ---
 
-# Phase 6 — Background Job System (BullMQ)
+## Phase 6 — Background Job System (BullMQ)
 
 Goal: Handle async tasks.
 
@@ -102,7 +102,7 @@ Deliverable: **Queue-based async processing**
 
 ---
 
-# Phase 7 — Docker & Local Infrastructure
+## Phase 7 — Docker & Local Infrastructure
 
 Goal: Reproducible environment.
 
@@ -120,7 +120,7 @@ Deliverable: **Complete containerized stack**
 
 ---
 
-# Phase 8 — Social Features
+## Phase 8 — Social Features
 
 Goal: Make platform interactive.
 
@@ -133,7 +133,7 @@ Deliverable: **User activity feed**
 
 ---
 
-# Phase 9 — File Upload System
+## Phase 9 — File Upload System
 
 Goal: Support resource thumbnails.
 
@@ -146,7 +146,7 @@ Deliverable: **File storage integration**
 
 ---
 
-# Phase 10 — Testing
+## Phase 10 — Testing
 
 Goal: Backend reliability.
 
@@ -159,7 +159,7 @@ Deliverable: **Tested backend system**
 
 ---
 
-# Phase 11 — CI/CD Pipeline
+## Phase 11 — CI/CD Pipeline
 
 Goal: Automated builds and deployments.
 
@@ -172,7 +172,7 @@ Deliverable: **Continuous deployment pipeline**
 
 ---
 
-# Phase 12 — Observability
+## Phase 12 — Observability
 
 Goal: Production readiness.
 
@@ -185,7 +185,7 @@ Deliverable: **Observable production backend**
 
 ---
 
-# Final Portfolio Outcome
+## Final Portfolio Outcome
 
 You will demonstrate real experience with:
 
