@@ -106,15 +106,15 @@ Deliverable: **Queue-based async processing**
 
 Goal: Reproducible environment.
 
-- [ ] Write `Dockerfile` for NestJS
-- [ ] Create `docker-compose.yml`
-- [ ] Add services:
+- [x] Write `Dockerfile` for NestJS
+- [x] Create `docker-compose.yml`
+- [x] Add services:
   - Node app
   - PostgreSQL
   - Redis
 
-- [ ] Configure environment variables
-- [ ] Verify app runs fully inside Docker
+- [x] Configure environment variables
+- [x] Verify app runs fully inside Docker
 
 Deliverable: **Complete containerized stack**
 
